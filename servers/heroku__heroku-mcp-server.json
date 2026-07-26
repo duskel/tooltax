@@ -1,0 +1,7 @@
+{
+  "name": "Heroku",
+  "repo": "https://github.com/heroku/heroku-mcp-server",
+  "source": { "type": "npm", "package": "@heroku/mcp-server" },
+  "category": "cloud",
+  "notes": "Official Heroku server. Starts without credentials."
+}

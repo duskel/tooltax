@@ -1,0 +1,31 @@
+{
+  "tools": [
+    {
+      "name": "get_user_by_id",
+      "description": "Look up a user by id.",
+      "inputSchema": {
+        "type": "object",
+        "properties": { "value": { "type": "string" } },
+        "required": ["value"]
+      }
+    },
+    {
+      "name": "get_user_by_email",
+      "description": "Look up a user by email address.",
+      "inputSchema": {
+        "type": "object",
+        "properties": { "value": { "type": "string" } },
+        "required": ["value"]
+      }
+    },
+    {
+      "name": "get_user_by_handle",
+      "description": "Look up a user by handle.",
+      "inputSchema": {
+        "type": "object",
+        "properties": { "value": { "type": "string" } },
+        "required": ["value"]
+      }
+    }
+  ]
+}

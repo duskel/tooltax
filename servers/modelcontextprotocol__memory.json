@@ -1,0 +1,7 @@
+{
+  "name": "Memory",
+  "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/memory",
+  "source": { "type": "npm", "package": "@modelcontextprotocol/server-memory" },
+  "category": "reference",
+  "notes": "Knowledge-graph memory over a local JSON file."
+}

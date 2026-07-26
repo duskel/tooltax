@@ -1,0 +1,7 @@
+{
+  "name": "Context7",
+  "repo": "https://github.com/upstash/context7",
+  "source": { "type": "npm", "package": "@upstash/context7-mcp" },
+  "category": "dev-tools",
+  "notes": "Up-to-date library documentation. Small tool surface by design."
+}

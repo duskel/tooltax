@@ -1,0 +1,12 @@
+id: repeated-boilerplate
+title: Identical prose repeated across tools
+severity: warn
+category: prose
+rationale: >-
+  Authentication notes, rate-limit warnings and formatting instructions get
+  copied into every tool description. The model only needs them once, but the
+  server pays for every copy on every request.
+fix: >-
+  Say it once. Put shared context in the server instructions field of the
+  initialize response, or drop it entirely and surface it in the tool error
+  message when it actually applies.

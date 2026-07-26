@@ -1,0 +1,7 @@
+{
+  "name": "Exa",
+  "repo": "https://github.com/exa-labs/exa-mcp-server",
+  "source": { "type": "npm", "package": "exa-mcp-server" },
+  "category": "search",
+  "notes": "Neural search. Lists its tools without an API key."
+}

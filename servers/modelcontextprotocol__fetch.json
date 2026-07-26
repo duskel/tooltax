@@ -1,0 +1,7 @@
+{
+  "name": "Fetch",
+  "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/fetch",
+  "source": { "type": "pypi", "package": "mcp-server-fetch" },
+  "category": "web",
+  "notes": "Python reference server, launched with uvx. Fetches a URL and converts it to markdown."
+}

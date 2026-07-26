@@ -1,0 +1,18 @@
+{
+  "tools": [
+    {
+      "name": "search_documents",
+      "description": "This tool allows you to search across all of the documents that have been indexed into the system. It supports full text search as well as semantic search. When you call this tool you should pass a query string that describes what you are looking for. The tool will then return a list of matching documents, each of which includes the document identifier, the title of the document, a short snippet of the matching text, and a relevance score between zero and one. Please note that the search index is refreshed every fifteen minutes, so very recently added documents may not appear in the results immediately. If no documents match the query then an empty list is returned rather than an error.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "The query string to search for. This can be a natural language question, a set of keywords, or an exact phrase wrapped in double quotes. The query is normalised before it is executed, which means that casing and surrounding whitespace are ignored entirely."
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}

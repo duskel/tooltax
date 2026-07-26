@@ -1,0 +1,7 @@
+{
+  "name": "GitHub (archived)",
+  "repo": "https://github.com/modelcontextprotocol/servers-archived",
+  "source": { "type": "npm", "package": "@modelcontextprotocol/server-github" },
+  "category": "dev-tools",
+  "notes": "Archived and deprecated on npm. Lists all tools without a token; the token is only needed at call time. Kept as a large-surface data point."
+}

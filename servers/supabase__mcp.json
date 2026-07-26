@@ -1,0 +1,7 @@
+{
+  "name": "Supabase",
+  "repo": "https://github.com/supabase/mcp",
+  "source": { "type": "npm", "package": "@supabase/mcp-server-supabase" },
+  "category": "data",
+  "notes": "Requires SUPABASE_ACCESS_TOKEN to start."
+}

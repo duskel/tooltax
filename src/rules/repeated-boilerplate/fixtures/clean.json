@@ -1,0 +1,8 @@
+{
+  "tools": [
+    { "name": "list_issues", "description": "List issues in a repository." },
+    { "name": "create_issue", "description": "Open a new issue." },
+    { "name": "close_issue", "description": "Close an open issue." },
+    { "name": "comment_issue", "description": "Add a comment to an issue." }
+  ]
+}

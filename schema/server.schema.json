@@ -1,0 +1,129 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://github.com/duskel/tooltax/blob/main/schema/server.schema.json",
+  "title": "tooltax registry entry",
+  "description": "One MCP server in the tooltax leaderboard. File name must be servers/<owner>__<name>.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["name", "repo", "source"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Human-readable server name as its authors write it.",
+      "minLength": 1,
+      "maxLength": 80
+    },
+    "repo": {
+      "type": "string",
+      "description": "URL of the source repository.",
+      "pattern": "^https://",
+      "maxLength": 300
+    },
+    "source": {
+      "description": "How tooltax obtains this server's tool schema.",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "package"],
+          "properties": {
+            "type": { "const": "npm" },
+            "package": {
+              "type": "string",
+              "description": "npm package name, run as `npx -y <package>`.",
+              "minLength": 1
+            },
+            "args": { "$ref": "#/$defs/args" },
+            "env": { "$ref": "#/$defs/env" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "package"],
+          "properties": {
+            "type": { "const": "pypi" },
+            "package": {
+              "type": "string",
+              "description": "PyPI package name, run as `uvx <package>`.",
+              "minLength": 1
+            },
+            "args": { "$ref": "#/$defs/args" },
+            "env": { "$ref": "#/$defs/env" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "command"],
+          "properties": {
+            "type": { "const": "command" },
+            "command": { "type": "string", "minLength": 1 },
+            "args": { "$ref": "#/$defs/args" },
+            "env": { "$ref": "#/$defs/env" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "url"],
+          "properties": {
+            "type": { "const": "url" },
+            "url": {
+              "type": "string",
+              "description": "A static JSON tool schema, or a live MCP Streamable HTTP endpoint.",
+              "pattern": "^https?://"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "path"],
+          "properties": {
+            "type": { "const": "file" },
+            "path": {
+              "type": "string",
+              "description": "Path to a checked-in JSON tool schema, relative to the repository root.",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "category": {
+      "type": "string",
+      "description": "Broad grouping used for leaderboard filtering.",
+      "enum": [
+        "reference",
+        "dev-tools",
+        "data",
+        "web",
+        "cloud",
+        "productivity",
+        "browser",
+        "search",
+        "other"
+      ]
+    },
+    "notes": {
+      "type": "string",
+      "description": "One line of context: caveats, required credentials, or why the score looks the way it does.",
+      "maxLength": 300
+    }
+  },
+  "$defs": {
+    "args": {
+      "type": "array",
+      "description": "Extra arguments passed to the server process.",
+      "items": { "type": "string" },
+      "maxItems": 20
+    },
+    "env": {
+      "type": "object",
+      "description": "Non-secret environment variables needed for the server to start and list tools. Never put real credentials here.",
+      "additionalProperties": { "type": "string" },
+      "maxProperties": 20
+    }
+  }
+}

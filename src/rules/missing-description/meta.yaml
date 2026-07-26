@@ -1,0 +1,12 @@
+id: missing-description
+title: Description is missing or says nothing
+severity: error
+category: prose
+rationale: >-
+  Cutting tokens is only a win if the tool is still selectable. An absent
+  description, or one that merely restates the tool name, pushes the cost from
+  context into failed and retried calls.
+fix: >-
+  Give every tool one short sentence covering what it does and when to choose it
+  over its neighbours. Describe parameters only where the name is genuinely
+  ambiguous.

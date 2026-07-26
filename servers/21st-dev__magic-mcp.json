@@ -1,0 +1,7 @@
+{
+  "name": "21st.dev Magic",
+  "repo": "https://github.com/21st-dev/magic-mcp",
+  "source": { "type": "npm", "package": "@21st-dev/magic" },
+  "category": "dev-tools",
+  "notes": "UI component generation."
+}

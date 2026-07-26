@@ -1,0 +1,18 @@
+{
+  "tools": [
+    {
+      "name": "search_documents",
+      "description": "Search indexed documents and return ranked matches.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "query": {
+            "type": "string",
+            "description": "Search query."
+          }
+        },
+        "required": ["query"]
+      }
+    }
+  ]
+}

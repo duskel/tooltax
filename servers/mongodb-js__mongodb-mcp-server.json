@@ -1,0 +1,7 @@
+{
+  "name": "MongoDB",
+  "repo": "https://github.com/mongodb-js/mongodb-mcp-server",
+  "source": { "type": "npm", "package": "mongodb-mcp-server" },
+  "category": "data",
+  "notes": "Official MongoDB server."
+}

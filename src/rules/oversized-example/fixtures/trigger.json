@@ -1,0 +1,33 @@
+{
+  "tools": [
+    {
+      "name": "create_order",
+      "description": "Create an order.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "order": {
+            "type": "object",
+            "examples": [
+              {
+                "customer": { "id": "cus_912834", "email": "buyer@example.com", "name": "Alex Rivera" },
+                "line_items": [
+                  { "sku": "SKU-100", "quantity": 2, "unit_price_cents": 4999, "currency": "USD" },
+                  { "sku": "SKU-204", "quantity": 1, "unit_price_cents": 12999, "currency": "USD" }
+                ],
+                "shipping_address": {
+                  "line1": "1 Example Street",
+                  "city": "Springfield",
+                  "region": "IL",
+                  "postal_code": "62701",
+                  "country": "US"
+                },
+                "metadata": { "source": "web", "campaign": "spring-sale-2026" }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

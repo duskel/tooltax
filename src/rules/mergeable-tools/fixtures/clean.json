@@ -1,0 +1,21 @@
+{
+  "tools": [
+    {
+      "name": "get_user",
+      "description": "Look up a user by id, email or handle.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "lookup_by": { "type": "string", "enum": ["id", "email", "handle"] },
+          "value": { "type": "string" }
+        },
+        "required": ["lookup_by", "value"]
+      }
+    },
+    {
+      "name": "list_teams",
+      "description": "List teams.",
+      "inputSchema": { "type": "object", "properties": {} }
+    }
+  ]
+}

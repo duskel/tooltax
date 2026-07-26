@@ -1,0 +1,7 @@
+{
+  "name": "Sentry",
+  "repo": "https://github.com/getsentry/sentry-mcp",
+  "source": { "type": "npm", "package": "@sentry/mcp-server" },
+  "category": "dev-tools",
+  "notes": "Official Sentry server. Requires SENTRY_ACCESS_TOKEN to start, so it is expected to stay pending until a scoring credential is available."
+}

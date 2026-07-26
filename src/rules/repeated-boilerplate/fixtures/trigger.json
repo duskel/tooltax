@@ -1,0 +1,20 @@
+{
+  "tools": [
+    {
+      "name": "list_issues",
+      "description": "List issues. Note that this endpoint requires a valid personal access token with the repo scope enabled. Rate limits apply and are shared across the whole installation."
+    },
+    {
+      "name": "create_issue",
+      "description": "Create an issue. Note that this endpoint requires a valid personal access token with the repo scope enabled. Rate limits apply and are shared across the whole installation."
+    },
+    {
+      "name": "close_issue",
+      "description": "Close an issue. Note that this endpoint requires a valid personal access token with the repo scope enabled. Rate limits apply and are shared across the whole installation."
+    },
+    {
+      "name": "comment_issue",
+      "description": "Comment on an issue. Note that this endpoint requires a valid personal access token with the repo scope enabled. Rate limits apply and are shared across the whole installation."
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Figma Context",
+  "repo": "https://github.com/GLips/Figma-Context-MCP",
+  "source": { "type": "npm", "package": "figma-developer-mcp", "args": ["--stdio"] },
+  "category": "dev-tools",
+  "notes": "Needs --stdio to speak the stdio transport, and a Figma API key to start."
+}

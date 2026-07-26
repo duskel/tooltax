@@ -1,0 +1,81 @@
+name: Leaderboard
+
+on:
+  # Nightly, so scores track upstream servers as they change.
+  schedule:
+    - cron: '17 3 * * *'
+  # After a registry entry lands on main.
+  push:
+    branches: [main]
+    paths:
+      - 'servers/**'
+      - 'src/**'
+      - 'schema/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: leaderboard
+  cancel-in-progress: false
+
+jobs:
+  regenerate:
+    name: Regenerate LEADERBOARD.md
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      # Some registry entries are PyPI servers launched with uvx.
+      - name: Install uv
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+
+      - name: Add uv to PATH
+        run: echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Validate registry
+        run: node dist/cli.js validate
+
+      # Servers are launched for real here. An unreachable server becomes a
+      # pending row rather than failing the run, so one broken upstream cannot
+      # block the whole leaderboard.
+      - name: Score every server
+        run: node dist/cli.js leaderboard --write --concurrency 4 --timeout 120000
+
+      - name: Show the result
+        run: head -40 LEADERBOARD.md
+
+      - name: Commit if anything changed
+        run: |
+          set -euo pipefail
+          git config user.name  'github-actions[bot]'
+          git config user.email 'github-actions[bot]@users.noreply.github.com'
+
+          git add LEADERBOARD.md badges/
+
+          # The generated file always carries a fresh timestamp, so diffing it
+          # directly would produce a commit every night even when no score moved.
+          # Compare everything except the timestamp line instead.
+          if git diff --cached --quiet -- badges/ \
+             && [ -z "$(git diff --cached -U0 -- LEADERBOARD.md | grep -E '^[+-]' | grep -vE '^(\+\+\+|---)' | grep -v 'Last generated:' || true)" ]; then
+            echo "No score changes. Skipping commit."
+            git reset
+            exit 0
+          fi
+
+          scored=$(grep -oE '^[0-9]+ server\(s\) scored' LEADERBOARD.md | head -1 || echo 'servers')
+          git commit -m "chore(leaderboard): regenerate scores (${scored})"
+          git push

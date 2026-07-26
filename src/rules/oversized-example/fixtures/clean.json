@@ -1,0 +1,17 @@
+{
+  "tools": [
+    {
+      "name": "create_order",
+      "description": "Create an order.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "customer_id": { "type": "string", "examples": ["cus_912834"] },
+          "sku": { "type": "string" },
+          "quantity": { "type": "integer", "default": 1 }
+        },
+        "required": ["customer_id", "sku"]
+      }
+    }
+  ]
+}

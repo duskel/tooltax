@@ -1,0 +1,12 @@
+id: enum-bloat
+title: Enum lists every allowed value inline
+severity: warn
+category: structure
+rationale: >-
+  Large inline enums are re-sent on every request. A 200-value enum can cost more
+  than the rest of the server combined, and models rarely need the full list to
+  pick a sensible value.
+fix: >-
+  Accept a plain string and validate inside the tool, returning the allowed
+  values in the error message. Keep the enum only when the set is small, stable
+  and genuinely unguessable.

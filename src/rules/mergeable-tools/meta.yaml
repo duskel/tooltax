@@ -1,0 +1,11 @@
+id: mergeable-tools
+title: Near-identical tools that could be one
+severity: info
+category: surface
+rationale: >-
+  Tools that share a name prefix and an identical input shape are usually
+  variants of a single operation. Every variant is billed separately in context,
+  and a larger tool surface makes the model pick wrong more often.
+fix: >-
+  Merge the variants into one tool with a mode or filter parameter, and let the
+  tool branch internally.

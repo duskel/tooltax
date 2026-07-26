@@ -1,0 +1,7 @@
+{
+  "name": "Firecrawl",
+  "repo": "https://github.com/firecrawl/firecrawl-mcp-server",
+  "source": { "type": "npm", "package": "firecrawl-mcp" },
+  "category": "web",
+  "notes": "Advertises a keyless mode, so it lists tools without an API key."
+}

@@ -1,0 +1,12 @@
+id: duplicate-param-shape
+title: The same parameter shape is redefined across tools
+severity: warn
+category: structure
+rationale: >-
+  Servers that wrap one API tend to repeat the same identifier or pagination
+  object in every tool. Each repetition is serialized into context separately, so
+  the cost scales with the number of tools rather than the number of distinct
+  shapes.
+fix: >-
+  Hoist the shared shape into $defs and reference it with $ref, or flatten it
+  into a small number of primitive parameters that do not need repeating.

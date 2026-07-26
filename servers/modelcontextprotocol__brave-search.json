@@ -1,0 +1,7 @@
+{
+  "name": "Brave Search (archived)",
+  "repo": "https://github.com/modelcontextprotocol/servers-archived",
+  "source": { "type": "npm", "package": "@modelcontextprotocol/server-brave-search" },
+  "category": "search",
+  "notes": "Archived and deprecated on npm. Requires BRAVE_API_KEY to start, so it is expected to stay pending."
+}

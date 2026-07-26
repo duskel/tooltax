@@ -1,0 +1,7 @@
+{
+  "name": "Kubernetes",
+  "repo": "https://github.com/Flux159/mcp-server-kubernetes",
+  "source": { "type": "npm", "package": "mcp-server-kubernetes" },
+  "category": "cloud",
+  "notes": "Starts and lists tools without a cluster connection."
+}

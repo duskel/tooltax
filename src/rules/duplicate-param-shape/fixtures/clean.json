@@ -1,0 +1,25 @@
+{
+  "tools": [
+    {
+      "name": "list_files",
+      "inputSchema": {
+        "type": "object",
+        "properties": { "path": { "type": "string" } }
+      }
+    },
+    {
+      "name": "read_file",
+      "inputSchema": {
+        "type": "object",
+        "properties": { "uri": { "type": "string" } }
+      }
+    },
+    {
+      "name": "write_file",
+      "inputSchema": {
+        "type": "object",
+        "properties": { "contents": { "type": "string" } }
+      }
+    }
+  ]
+}

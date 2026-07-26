@@ -1,0 +1,16 @@
+{
+  "tools": [
+    {
+      "name": "run_query",
+      "inputSchema": {
+        "type": "object",
+        "properties": { "sql": { "type": "string" } },
+        "required": ["sql"]
+      }
+    },
+    {
+      "name": "purge_cache",
+      "description": "purge cache"
+    }
+  ]
+}

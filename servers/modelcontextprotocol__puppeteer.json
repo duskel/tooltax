@@ -1,0 +1,7 @@
+{
+  "name": "Puppeteer (archived)",
+  "repo": "https://github.com/modelcontextprotocol/servers-archived",
+  "source": { "type": "npm", "package": "@modelcontextprotocol/server-puppeteer" },
+  "category": "browser",
+  "notes": "Archived and deprecated on npm. Starts without configuration."
+}

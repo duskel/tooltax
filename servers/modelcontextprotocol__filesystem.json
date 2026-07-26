@@ -1,0 +1,7 @@
+{
+  "name": "Filesystem",
+  "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/filesystem",
+  "source": { "type": "npm", "package": "@modelcontextprotocol/server-filesystem", "args": ["/tmp"] },
+  "category": "reference",
+  "notes": "Needs at least one allowed directory to start. The tool list does not depend on which directory is passed."
+}

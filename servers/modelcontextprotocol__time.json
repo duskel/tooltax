@@ -1,0 +1,7 @@
+{
+  "name": "Time",
+  "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/time",
+  "source": { "type": "pypi", "package": "mcp-server-time" },
+  "category": "productivity",
+  "notes": "Python reference server, launched with uvx. Time and timezone conversion."
+}

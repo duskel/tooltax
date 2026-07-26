@@ -1,0 +1,7 @@
+{
+  "name": "Playwright",
+  "repo": "https://github.com/microsoft/playwright-mcp",
+  "source": { "type": "npm", "package": "@playwright/mcp" },
+  "category": "browser",
+  "notes": "Browser automation over accessibility snapshots. Starts without configuration."
+}

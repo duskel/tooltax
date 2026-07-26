@@ -1,0 +1,7 @@
+{
+  "name": "Git",
+  "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/git",
+  "source": { "type": "pypi", "package": "mcp-server-git" },
+  "category": "dev-tools",
+  "notes": "Python reference server, launched with uvx. Reads and manipulates a local git repository."
+}

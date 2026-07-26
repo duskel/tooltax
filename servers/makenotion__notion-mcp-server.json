@@ -1,0 +1,7 @@
+{
+  "name": "Notion",
+  "repo": "https://github.com/makenotion/notion-mcp-server",
+  "source": { "type": "npm", "package": "@notionhq/notion-mcp-server" },
+  "category": "productivity",
+  "notes": "Official Notion server. Lists its tools without credentials."
+}

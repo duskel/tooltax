@@ -1,0 +1,58 @@
+{
+  "tools": [
+    {
+      "name": "list_files",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "object",
+            "properties": {
+              "owner": { "type": "string" },
+              "repo": { "type": "string" },
+              "branch": { "type": "string" },
+              "commit_sha": { "type": "string" }
+            },
+            "required": ["owner", "repo"]
+          }
+        }
+      }
+    },
+    {
+      "name": "read_file",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "object",
+            "properties": {
+              "owner": { "type": "string" },
+              "repo": { "type": "string" },
+              "branch": { "type": "string" },
+              "commit_sha": { "type": "string" }
+            },
+            "required": ["owner", "repo"]
+          }
+        }
+      }
+    },
+    {
+      "name": "write_file",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "object",
+            "properties": {
+              "owner": { "type": "string" },
+              "repo": { "type": "string" },
+              "branch": { "type": "string" },
+              "commit_sha": { "type": "string" }
+            },
+            "required": ["owner", "repo"]
+          }
+        }
+      }
+    }
+  ]
+}

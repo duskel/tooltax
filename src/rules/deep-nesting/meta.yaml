@@ -1,0 +1,12 @@
+id: deep-nesting
+title: Input schema nests deeper than models need
+severity: warn
+category: structure
+rationale: >-
+  Every level of nesting adds braces, type keywords and required arrays that are
+  re-serialized into context on every request. Past about three levels the
+  structure also starts to hurt argument accuracy.
+fix: >-
+  Flatten the schema. Accept an opaque string or a single object of primitives
+  where the nested tree only exists to mirror an internal data model, and
+  validate the detail inside the tool instead.

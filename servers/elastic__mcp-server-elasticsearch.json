@@ -1,0 +1,7 @@
+{
+  "name": "Elasticsearch",
+  "repo": "https://github.com/elastic/mcp-server-elasticsearch",
+  "source": { "type": "npm", "package": "@elastic/mcp-server-elasticsearch" },
+  "category": "data",
+  "notes": "Official Elastic server. Exits without connection configuration."
+}

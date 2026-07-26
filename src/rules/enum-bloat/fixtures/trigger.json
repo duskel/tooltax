@@ -1,0 +1,24 @@
+{
+  "tools": [
+    {
+      "name": "convert_currency",
+      "description": "Convert an amount between currencies.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "amount": { "type": "number" },
+          "currency": {
+            "type": "string",
+            "enum": [
+              "USD", "EUR", "GBP", "JPY", "CNY", "AUD", "CAD", "CHF", "SEK", "NZD",
+              "MXN", "SGD", "HKD", "NOK", "KRW", "TRY", "RUB", "INR", "BRL", "ZAR",
+              "DKK", "PLN", "TWD", "THB", "MYR", "IDR", "CZK", "HUF", "ILS", "CLP",
+              "PHP", "AED", "COP", "SAR", "RON", "PEN", "VND", "ARS", "EGP", "NGN"
+            ]
+          }
+        },
+        "required": ["amount", "currency"]
+      }
+    }
+  ]
+}

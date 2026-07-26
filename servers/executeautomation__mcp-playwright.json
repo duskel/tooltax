@@ -1,0 +1,7 @@
+{
+  "name": "Playwright (ExecuteAutomation)",
+  "repo": "https://github.com/executeautomation/mcp-playwright",
+  "source": { "type": "npm", "package": "@executeautomation/playwright-mcp-server" },
+  "category": "browser",
+  "notes": "A second Playwright server with a much larger tool surface, which makes it a useful contrast with the Microsoft one."
+}

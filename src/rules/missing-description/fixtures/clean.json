@@ -1,0 +1,19 @@
+{
+  "tools": [
+    {
+      "name": "run_query",
+      "description": "Run a read-only SQL query against the analytics warehouse.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "sql": { "type": "string", "description": "A SELECT statement." }
+        },
+        "required": ["sql"]
+      }
+    },
+    {
+      "name": "purge_cache",
+      "description": "Evict every entry from the response cache."
+    }
+  ]
+}

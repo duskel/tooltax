@@ -1,0 +1,7 @@
+{
+  "name": "Sequential Thinking",
+  "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking",
+  "source": { "type": "npm", "package": "@modelcontextprotocol/server-sequential-thinking" },
+  "category": "reference",
+  "notes": "A single tool with a large parameter surface, which makes it a good test of per-tool rather than per-server cost."
+}

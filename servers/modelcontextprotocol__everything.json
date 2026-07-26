@@ -1,0 +1,7 @@
+{
+  "name": "Everything",
+  "repo": "https://github.com/modelcontextprotocol/servers/tree/main/src/everything",
+  "source": { "type": "npm", "package": "@modelcontextprotocol/server-everything" },
+  "category": "reference",
+  "notes": "Reference server exercising every MCP feature. Useful as a protocol baseline rather than a production workload."
+}

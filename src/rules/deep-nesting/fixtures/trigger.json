@@ -1,0 +1,40 @@
+{
+  "tools": [
+    {
+      "name": "create_deployment",
+      "description": "Create a deployment.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "spec": {
+            "type": "object",
+            "properties": {
+              "template": {
+                "type": "object",
+                "properties": {
+                  "container": {
+                    "type": "object",
+                    "properties": {
+                      "resources": {
+                        "type": "object",
+                        "properties": {
+                          "limits": {
+                            "type": "object",
+                            "properties": {
+                              "cpu": { "type": "string" },
+                              "memory": { "type": "string" }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

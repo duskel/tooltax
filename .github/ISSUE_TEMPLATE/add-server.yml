@@ -1,0 +1,102 @@
+name: Add an MCP server to the leaderboard
+description: Suggest a server for tooltax to measure. A pull request with the JSON file is faster, but this works too.
+title: "add server: "
+labels: ["registry", "good first issue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Adding the file yourself is one small JSON file and gets merged faster --
+        see [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md#1-add-a-server).
+        Use this form if you would rather someone else do it.
+
+        Please do not paste token counts. tooltax measures them in CI; a number
+        typed by hand is exactly what this project exists to replace.
+
+  - type: input
+    id: name
+    attributes:
+      label: Server name
+      description: As its authors write it.
+      placeholder: Filesystem
+    validations:
+      required: true
+
+  - type: input
+    id: repo
+    attributes:
+      label: Repository URL
+      description: Must be a real, public repository.
+      placeholder: https://github.com/modelcontextprotocol/servers
+    validations:
+      required: true
+
+  - type: dropdown
+    id: source_type
+    attributes:
+      label: How can tooltax obtain the tool schema?
+      options:
+        - npm package (run with npx)
+        - PyPI package (run with uvx)
+        - Arbitrary command
+        - HTTP URL (static JSON schema or live MCP endpoint)
+    validations:
+      required: true
+
+  - type: input
+    id: source_value
+    attributes:
+      label: Package name, command, or URL
+      description: The exact identifier. It must resolve; entries that cannot be verified are closed.
+      placeholder: "@modelcontextprotocol/server-filesystem"
+    validations:
+      required: true
+
+  - type: input
+    id: source_args
+    attributes:
+      label: Arguments needed to start it
+      description: Leave blank if none. Do not include secrets.
+      placeholder: "/tmp"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - reference
+        - dev-tools
+        - data
+        - web
+        - cloud
+        - productivity
+        - browser
+        - search
+        - other
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Anything that affects measurement, such as required credentials or a tool list that varies with configuration.
+      placeholder: Needs an API key to start, so it will likely land in the pending section.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: The repository exists and is public.
+          required: true
+        - label: The package or command exists and I have seen it run.
+          required: true
+        - label: I have not included any credentials or secrets.
+          required: true
+        - label: I have not claimed a token count that tooltax did not measure.
+          required: true

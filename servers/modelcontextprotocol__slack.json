@@ -1,0 +1,7 @@
+{
+  "name": "Slack (archived)",
+  "repo": "https://github.com/modelcontextprotocol/servers-archived",
+  "source": { "type": "npm", "package": "@modelcontextprotocol/server-slack" },
+  "category": "productivity",
+  "notes": "Archived and deprecated on npm. Requires SLACK_BOT_TOKEN and SLACK_TEAM_ID to start."
+}

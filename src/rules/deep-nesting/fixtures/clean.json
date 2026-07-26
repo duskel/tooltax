@@ -1,0 +1,17 @@
+{
+  "tools": [
+    {
+      "name": "create_deployment",
+      "description": "Create a deployment.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "image": { "type": "string" },
+          "cpu_limit": { "type": "string" },
+          "memory_limit": { "type": "string" }
+        },
+        "required": ["image"]
+      }
+    }
+  ]
+}

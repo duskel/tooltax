@@ -1,0 +1,68 @@
+{
+  "name": "tooltax",
+  "version": "0.1.0",
+  "description": "Token-budget linter and public leaderboard for MCP tool schemas.",
+  "license": "MIT",
+  "homepage": "https://duskel.com",
+  "bugs": {
+    "url": "https://github.com/duskel/tooltax/issues"
+  },
+  "author": {
+    "name": "Duskel",
+    "email": "hello@duskel.com",
+    "url": "https://duskel.com"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "bin": {
+    "tooltax": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "schema",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-assets.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate:registry": "node dist/cli.js validate",
+    "leaderboard": "node dist/cli.js leaderboard --write",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "gpt-tokenizer": "^3.4.0",
+    "yaml": "^2.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "tokens",
+    "context-window",
+    "linter",
+    "llm"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/duskel/tooltax.git"
+  }
+}
