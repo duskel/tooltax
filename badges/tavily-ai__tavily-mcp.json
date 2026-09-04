@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "label": "tool tokens",
-  "message": "1.7k (5 tools)",
-  "color": "brightgreen",
-  "cacheSeconds": 86400
+  "message": "pending",
+  "color": "lightgrey",
+  "cacheSeconds": 3600
 }
